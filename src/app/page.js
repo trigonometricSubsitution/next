@@ -1,3 +1,6 @@
+/**
+ * @author 蔡翔宇 <tom2004527@gmail.com>
+ */
 import Link from "next/link";
 import { 
   Navbar,
@@ -16,6 +19,25 @@ import {
 } from "flowbite-react";
 
 export default function Home() {
+
+  const items = [
+    {
+      cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/%E8%99%8E%E5%B0%BE%E5%BE%B7%E8%88%88%E5%AE%AE.jpg/1280px-%E8%99%8E%E5%B0%BE%E5%BE%B7%E8%88%88%E5%AE%AE.jpg",
+      name: "虎尾德興宮",
+      description: "虎尾德興宮，主祀池府千歲，在地人稱「王爺公、大崙腳王爺、虎尾王爺」，為虎尾最悠久的廟宇，有三百多年歷史，同時見證虎尾歷史發展，為虎尾最重要的信仰中心，每年池府千歲聖誕遶境，虎尾德興宮以及虎尾街上更是擠的水洩不通、熱鬧非凡。",
+    },
+    {
+      cover: "",
+      name: "斗六",
+      description: "456",
+    },
+    {
+      cover: "",
+      name: "北港",
+      description: "789",
+    },
+  ];
+
   return (
     <>
     <div className="bg-cyan-800">
@@ -43,26 +65,27 @@ export default function Home() {
     </div>
       <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
         <Carousel>
-          <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." />
-          <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." />
-          <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." />
-          <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." />
-          <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
+          <img src="/banner/banner-1.jpg" alt="由 黃庭富 - 自己的作品, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=110577446" />
+          <img src="/banner/banner-2.jpg" alt="由 白襪 - 自己的作品, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=129500844" />
+          <img src="/banner/banner-3.jpg" alt="由 禮名畫的生活旅遊日記 FB - https://www.flickr.com/photos/8628250@N08/22539827266/, CC0, https://commons.wikimedia.org/w/index.php?curid=64438935" />
+          <img src="/banner/banner-4.jpg" alt="由 Viy4092 - 自己的作品, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=44814900" />
+          <img src="/banner/banner-5.jpg" alt="由 Mk2010 - 自己的作品, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=28418713" />
         </Carousel>
       </div>
 
-      <div className="bg-white">
-        <div className="container mx-auto">
+      <div className="bg-white py-16">
+        <div className="container mx-auto grid grid-cols-4 gap-4">
+          { items.map( item =>
           <Card
             className="max-w-sm"
-            imgAlt="Meaningful alt text for an image that is not purely decorative"
-            imgSrc="/images/blog/image-1.jpg"
+            imgAlt={item.name}
+            imgSrc={item.cover}
           >
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Noteworthy technology acquisitions 2021
+              {item.name}
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+              {item.description}
             </p>
             <Button>
               Read more
@@ -75,6 +98,7 @@ export default function Home() {
               </svg>
             </Button>
           </Card>
+          )}
         </div>
       </div>
       <Footer container>
