@@ -71,8 +71,8 @@ export default function Home() {
         </Carousel>
       </div>
 
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="container mx-auto mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center">
           {
             items.map( (item, index) =>
               <Card item={item} key={index}/>
