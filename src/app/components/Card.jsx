@@ -1,14 +1,14 @@
 /**
  * @author 蔡翔宇 <b11117048@gemail.yuntech.edu.tw>
  */
-import Image from "next/image";
-
+import AutoSizeImage from "./AutoSizeImage";
 export default function Card({item}){
     return (
+        
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
                 <div className="h-48 overflow-hidden">
-                    <img class="rounded-t-lg" src={item.Picture.PictureUrl1} alt={item.Picture.PictureDescription1} />
+                    <AutoSizeImage class="rounded-t-lg" src={item.Picture.PictureUrl1} alt={item.Picture.PictureDescription1} />
                 </div>
             </a>
             <div class="p-5">
@@ -24,11 +24,11 @@ export default function Card({item}){
                 </a>
             </div>
         </div>
-    /**
+        
+        /**
         <div class="border">
-            <img src={item.Picture.PictureUrl1} alt={item.Picture.PictureDescription1}/>
             <div>{item.ScenicSpotName}</div>
         </div>
-     */
+         */
     )
 }
